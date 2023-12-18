@@ -24,7 +24,12 @@
 
 ## Description
 
-This is a **Book Store App** build using [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository .
+This is a **Book Store App** build using [Nest](https://github.com/nestjs/nest). This repository demonstrates the implementation of GET and POST APIs using NestJS and PostgreSQL with TypeORM.
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- PostgreSQL
 
 ## Installation
 
