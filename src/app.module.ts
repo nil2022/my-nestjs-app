@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { BookModule } from './book/book.module';
 
 @Module({
   imports: [
@@ -22,11 +22,15 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         synchronize: configService.get<boolean>('DB_SYNC'),
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        logging: true,
       }),
       inject: [ConfigService],
     }),
+    BookModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   providers: [],
+  exports: [],
 })
 export class AppModule {}
