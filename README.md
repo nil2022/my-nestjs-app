@@ -65,7 +65,7 @@ Retrieves all data from the PostgreSQL database.
 
 Make a GET request to the /your-endpoint endpoint to fetch all data.
 
-### POST Endpoint
+#### POST Endpoint
 
 ##### Endpoint:
 ```bash
