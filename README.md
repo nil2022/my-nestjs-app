@@ -24,7 +24,8 @@
 
 ## Description
 
-This is a **Book Store App** build using [Nest](https://github.com/nestjs/nest). This repository demonstrates the implementation of GET and POST APIs using NestJS and PostgreSQL with TypeORM.
+This is a **Book Store App** build using [Nest](https://github.com/nestjs/nest).
+This repository demonstrates the implementation of GET and POST APIs using NestJS and PostgreSQL with TypeORM.
 
 ### Prerequisites
 
@@ -49,6 +50,58 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## APIs
+#### GET Endpoint
+
+##### Endpoint:
+```bash
+GET http://localhost:3000/book/api/v1/getbooks
+```
+##### Description:
+
+Retrieves all data from the PostgreSQL database.
+
+##### Usage:
+
+Make a GET request to the /your-endpoint endpoint to fetch all data.
+
+### POST Endpoint
+
+##### Endpoint:
+```bash
+POST http://localhost:3000/book/api/v1/addbook
+```
+##### Description:
+Adds a new book to the PostgreSQL database.
+##### Usage:
+Make a POST request to the /your-endpoint endpoint to add a new book.
+
+Example:
+
+##### Request:
+```json
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "published": "2010"
+}
+```
+##### Response:
+```json
+{
+  "id": 1,
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "published": "2010"
+}
+```
+
+## Dependencies
+
+- [Nest](https://github.com/nestjs/nest)
+- [TypeORM](https://github.com/typeorm/typeorm)
+- [PostgreSQL](https://www.postgresql.org/)
+
 
 <!-- ## Test
 
@@ -66,4 +119,3 @@ $ npm run test:cov
 ## Stay in touch
 
 - Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)

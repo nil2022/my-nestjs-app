@@ -16,9 +16,9 @@ export class BookService {
     book.title = createBookDto.title;
     book.author = createBookDto.author;
     book.published = createBookDto.published;
-    return this.bookService.save(book);
+    return await this.bookService.save(book);
   }
   async findAll(): Promise<Book[]> {
-    return this.bookService.find();
+    return await this.bookService.find();
   }
 }
