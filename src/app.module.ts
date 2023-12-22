@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BookModule } from './book/book.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -24,12 +25,14 @@ import { BookModule } from './book/book.module';
         synchronize: configService.get<boolean>('DB_SYNC'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         logging: true,
+        logger: 'advanced-console',
+        keepConnectionAlive: true,
       }),
       inject: [ConfigService],
     }),
     BookModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
   exports: [],
 })
