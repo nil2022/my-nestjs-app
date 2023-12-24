@@ -34,6 +34,25 @@ jobs:
       - name: Run ESLint
         run: npm run lint .
 
+      # Add the following steps to use secrets as environment variables
+      - name: Set up environment variables
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_SYNC: ${{ secrets.DB_SYNC }}
+          
+      - name: Use secrets in build
+        run: |
+          echo "DB_HOST: $DB_HOST"
+          echo "DB_PORT: $DB_PORT"
+          echo "DB_USERNAME: $DB_USERNAME"
+          echo "DB_PASSWORD: $DB_PASSWORD"
+          echo "DB_NAME: $DB_NAME"
+          echo "DB_SYNC: $DB_SYNC"
+
       # Step 5: Run tests (if any)
       - name: Run tests
         run: npm run test:e2e
