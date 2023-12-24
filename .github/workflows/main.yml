@@ -51,6 +51,16 @@ jobs:
           echo "DB_NAME=$DB_NAME" >> $GITHUB_ENV
           echo "DB_SYNC=$DB_SYNC" >> $GITHUB_ENV
 
+      # Access the secrets
+      - name: Access secrets
+        run: |
+            echo "DB_HOST: $DB_HOST"
+            echo "DB_PORT: $DB_PORT"
+            echo "DB_USERNAME: $DB_USERNAME"
+            echo "DB_PASSWORD: $DB_PASSWORD"
+            echo "DB_NAME: $DB_NAME"
+            echo "DB_SYNC: $DB_SYNC"
+
       # Step 5: Run tests (if any)
       - name: Run tests
         run: npm run test:e2e
