@@ -24,7 +24,7 @@
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.1.18",
     "@nestjs/mapped-types": "*",
-    "@nestjs/platform-express": "^11.1.17",
+    "@nestjs/platform-express": "^11.1.28",
     "@nestjs/typeorm": "^11.0.3",
     "mysql2": "^3.9.8",
     "pg": "^8.11.3",
